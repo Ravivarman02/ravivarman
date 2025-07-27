@@ -23,13 +23,13 @@
 </head>
 <body class="bg-gray-900 text-gray-200">
 
-    <!-- Header & Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white">Ravivarman</a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
                 <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#certifications" class="hover:text-cyan-400 transition-colors">Certifications</a>
                 <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
                 <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
                 <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">Contact</a>
@@ -38,10 +38,10 @@
                 <i data-lucide="menu"></i>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
             <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
             <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-700">Skills</a>
+            <a href="#certifications" class="block py-2 px-4 text-sm hover:bg-gray-700">Certifications</a>
             <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
             <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-700">Experience</a>
             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
@@ -49,7 +49,6 @@
     </header>
 
     <main class="container mx-auto px-6 pt-24">
-        <!-- Hero Section -->
         <section id="hero" class="min-h-screen flex flex-col justify-center items-start text-left">
             <div class="max-w-3xl">
                 <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
@@ -74,7 +73,6 @@
             </div>
         </section>
 
-        <!-- About Me Section -->
         <section id="about" class="py-20">
             <h2 class="text-4xl font-bold text-center text-white mb-12">About Me</h2>
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -98,11 +96,9 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="py-20">
             <h2 class="text-4xl font-bold text-center text-white mb-12">Technical Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Skill Category 1 -->
                 <div class="glass-effect p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-cyan-400 mb-4">Languages</h3>
                     <ul class="space-y-2 text-gray-300">
@@ -112,27 +108,20 @@
                         <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Sqlite</li>
                     </ul>
                 </div>
-                <!-- Skill Category 2 -->
                 <div class="glass-effect p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-cyan-400 mb-4">Core Programming Languages</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Verilog</li>
                         <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>MATLAB</li>
-                        <!--<li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Tailwind CSS</li>
-                        <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Spring Boot</li>-->
-                    </ul>
+                        </ul>
                 </div>
-                <!-- Skill Category 3 -->
                 <div class="glass-effect p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-cyan-400 mb-4">Simulation Tools</h3>
                     <ul class="space-y-2 text-gray-300">
                         <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Cadence Virtuoso</li>
                         <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Keil</li>
-                        <!--<li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>MySQL</li>
-                        <li><i data-lucide="check-circle" class="inline-block w-4 h-4 mr-2 text-green-400"></i>Firebase</li>-->
-                    </ul>
+                        </ul>
                 </div>
-                <!-- Skill Category 4 -->
                 <div class="glass-effect p-6 rounded-lg">
                     <h3 class="text-xl font-bold text-cyan-400 mb-4">Soft Skills</h3>
                     <ul class="space-y-2 text-gray-300">
@@ -145,11 +134,57 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <section id="certifications" class="py-20">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">Certifications</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-cyan-400 mr-4 shrink-0"></i>
+                            <h3 class="text-xl font-bold text-white">Your Certificate Name</h3>
+                        </div>
+                        <p class="text-gray-400 mb-1">Issued by: <span class="font-semibold text-gray-300">Issuing Organization (e.g., Coursera)</span></p>
+                        <p class="text-gray-500 text-sm mb-4">Issued: Month Year</p>
+                    </div>
+                    <a href="[Link to your certificate]" target="_blank" class="text-cyan-400 hover:underline inline-flex items-center mt-auto font-semibold">
+                        View Credential
+                        <i data-lucide="external-link" class="inline-block w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-cyan-400 mr-4 shrink-0"></i>
+                            <h3 class="text-xl font-bold text-white">Another Certificate</h3>
+                        </div>
+                        <p class="text-gray-400 mb-1">Issued by: <span class="font-semibold text-gray-300">NPTEL</span></p>
+                        <p class="text-gray-500 text-sm mb-4">Issued: Month Year</p>
+                    </div>
+                    <a href="[Link to your certificate]" target="_blank" class="text-cyan-400 hover:underline inline-flex items-center mt-auto font-semibold">
+                        View Credential
+                        <i data-lucide="external-link" class="inline-block w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="award" class="w-8 h-8 text-cyan-400 mr-4 shrink-0"></i>
+                            <h3 class="text-xl font-bold text-white">More Credentials</h3>
+                        </div>
+                        <p class="text-gray-400 mb-1">Issued by: <span class="font-semibold text-gray-300">Udemy / LinkedIn Learning</span></p>
+                        <p class="text-gray-500 text-sm mb-4">Issued: Month Year</p>
+                    </div>
+                    <a href="[Link to your certificate]" target="_blank" class="text-cyan-400 hover:underline inline-flex items-center mt-auto font-semibold">
+                        View Credential
+                        <i data-lucide="external-link" class="inline-block w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="py-20">
             <h2 class="text-4xl font-bold text-center text-white mb-12">My Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <!-- Project Card 1 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
                     <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+1" alt="Project 1" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -157,17 +192,11 @@
                         <p class="text-gray-400 mb-4">This project focuses on enhancing women's safety in public and private transportation by developing a smart, real-time alert system. The system is designed to detect distress situations and automatically trigger alerts to emergency contacts or authorities through GPS-based location tracking and GSM communication. Additional safety features include panic button integration, vibration/motion sensing, and voice-triggered alerts.
 The goal is to provide a reliable and proactive safety mechanism for women commuters, especially in isolated or dangerous situations.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <!--<span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">React</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Node.js</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">MongoDB</span>-->
-                        </div>
+                            </div>
                         <div class="flex justify-between items-center">
-                            <!--<a href="[Link to Live Demo]" target="_blank" class="text-cyan-400 hover:underline">Live Demo <i data-lucide="external-link" class="inline-block w-4 h-4"></i></a>
-                            <a href="[Link to GitHub Repo]" target="_blank" class="text-gray-400 hover:text-white"><i data-lucide="github" class="w-6 h-6"></i></a>-->
-                        </div>
+                            </div>
                     </div>
                 </div>
-                <!-- Project Card 2 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
                     <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+2" alt="Project 2" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -175,42 +204,18 @@ The goal is to provide a reliable and proactive safety mechanism for women commu
                         <p class="text-gray-400 mb-4">As part of my academic project, I conducted a comprehensive performance evaluation of three widely-used routing protocols in Mobile Ad-hoc Networks (MANET): AODV, DSR, and DSDV. Using NS-3 for simulation and MATLAB for data analysis and visualization, I analyzed key performance metrics including Throughput, Packet Delivery Ratio (PDR), End-to-End Delay, and Routing Overhead.
 This project enhanced my understanding of wireless network dynamics and protocol behavior under varying mobility and traffic conditions.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <!--<span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Python</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Flask</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">PostgreSQL</span>-->
-                        </div>
+                            </div>
                         <div class="flex justify-between items-center">
-                            <!--<a href="[Link to Live Demo]" target="_blank" class="text-cyan-400 hover:underline">Live Demo <i data-lucide="external-link" class="inline-block w-4 h-4"></i></a>
-                            <a href="[Link to GitHub Repo]" target="_blank" class="text-gray-400 hover:text-white"><i data-lucide="github" class="w-6 h-6"></i></a>-->
-                        </div>
+                            </div>
                     </div>
                 </div>
-                <!-- Project Card 3 -->
-                <!--<div class="bg-gray-800 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+3" alt="Project 3" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Project Title 3</h3>
-                        <p class="text-gray-400 mb-4">This could be a mobile app, a data science project, or a complex web application.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Java</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Spring Boot</span>
-                            <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Android</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="[Link to Live Demo]" target="_blank" class="text-cyan-400 hover:underline">Live Demo <i data-lucide="external-link" class="inline-block w-4 h-4"></i></a>
-                            <a href="[Link to GitHub Repo]" target="_blank" class="text-gray-400 hover:text-white"><i data-lucide="github" class="w-6 h-6"></i></a>
-                        </div>
-                    </div>
-                </div>-->
-            </div>
+                </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="py-20">
             <h2 class="text-4xl font-bold text-center text-white mb-12">Work Experience</h2>
             <div class="max-w-3xl mx-auto">
                 <div class="relative border-l-2 border-cyan-500 pl-10">
-                    <!-- Experience Item 1 -->
                     <div class="mb-10">
                         <div class="absolute w-4 h-4 bg-cyan-500 rounded-full -left-2 mt-1.5"></div>
                         <p class="text-sm text-gray-400">June 2025 - July 2025</p>
@@ -226,7 +231,6 @@ responsiveness.</li>
 communication across 2+ IoT devices, improving overall system responsiveness.</li>
                         </ul>
                     </div>
-                    <!-- Experience Item 2 (Optional) -->
                     <div class="mb-10">
                         <div class="absolute w-4 h-4 bg-cyan-500 rounded-full -left-2 mt-1.5"></div>
                         <p class="text-sm text-gray-400">Febraury 2023 - June 2025</p>
@@ -245,7 +249,6 @@ student participation in entrepreneurial workshops and networking events within 
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20">
             <h2 class="text-4xl font-bold text-center text-white mb-4">Get In Touch</h2>
             <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
@@ -259,7 +262,6 @@ student participation in entrepreneurial workshops and networking events within 
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800/50">
         <div class="container mx-auto px-6 py-6 text-center text-gray-400">
             <div class="flex justify-center space-x-4 mb-4">
