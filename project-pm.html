@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project: Social Networking App - Ravivarman</title>
+    <title>Project: EventConnect App - Ravivarman</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,100 +18,170 @@
             background-image: radial-gradient(#06b6d41a 1px, transparent 1px);
             background-size: 20px 20px;
         }
+        /* Styles for the Modal */
+        .modal {
+            transition: opacity 0.25s ease;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-800">
 
-    <!-- Header -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-slate-900">Ravivarman</a>
-             <a href="index.html#projects" class="font-medium text-slate-600 hover:text-cyan-500 transition-colors inline-flex items-center group">
-                <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Projects
-            </a>
+            <div class="flex items-center space-x-6">
+                <a href="https://ravivarman2.github.io/ravivarman/resume.html" target="_blank" class="font-medium text-slate-600 hover:text-cyan-500 transition-colors inline-flex items-center">
+                    <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> My Resume
+                </a>
+                <a href="mailto:theravivarman.d@gmail.com" class="font-medium text-slate-600 hover:text-cyan-500 transition-colors inline-flex items-center">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2"></i> Contact
+                </a>
+                <a href="index.html#projects" class="font-medium text-slate-600 hover:text-cyan-500 transition-colors inline-flex items-center group">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Projects
+                </a>
+            </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-6 py-16 md:py-24">
-        <!-- Project Header -->
-        <section class="max-w-4xl mx-auto text-center">
-            <span class="text-sm font-semibold text-cyan-600 mb-2 block">Product Management Project</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                New Social Networking App Concept
-            </h1>
-            <p class="text-lg text-slate-500 mt-6 max-w-2xl mx-auto">
-                A conceptual project defining a new mobile application designed to connect people through shared, spontaneous local experiences, moving beyond traditional online social circles.
-            </p>
+    <main>
+        <section class="py-20 md:py-32 hero-bg-project">
+            <div class="container mx-auto px-6 text-center">
+                <span class="text-sm font-semibold text-cyan-600 mb-2 block">Product Management Case Study</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    EventConnect: An Event Networking App
+                </h1>
+                <p class="text-lg text-slate-500 mt-6 max-w-3xl mx-auto">
+                    A complete product teardown for a mobile application designed to solve networking inefficiencies at professional events through AI-powered matchmaking and instant contact exchange.
+                </p>
+            </div>
         </section>
 
-        <!-- Project Hub Links -->
-        <section class="mt-16 max-w-2xl mx-auto">
-            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Project Assets</h2>
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <!-- NOTE: Replace '#' with the actual link to your presentation slides -->
-                    <a href="#" target="_blank" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
-                        <i data-lucide="presentation" class="w-6 h-6 mr-3"></i>
-                        <span>View Presentation</span>
-                    </a>
-                    <!-- NOTE: Replace '#' with the actual link to your PRD document -->
-                    <a href="#" target="_blank" class="bg-white hover:bg-slate-100 text-slate-700 font-bold py-4 px-6 rounded-xl transition-colors duration-300 border-2 border-slate-200 hover:border-slate-300 flex items-center justify-center text-center">
-                         <i data-lucide="file-text" class="w-6 h-6 mr-3"></i>
-                        <span>Read the PRD</span>
-                    </a>
+        <section class="container mx-auto px-6 -mt-16">
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Project Deliverables</h2>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <button onclick="openModal('https://docs.google.com/presentation/d/1h2o3DUBVpi7_UkZSTH-i6d1_JfA_BOl7/edit?usp=sharing&ouid=107305099867451998626&rtpof=true&sd=true')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
+                            <i data-lucide="presentation" class="w-6 h-6 mr-3"></i>
+                            <span>View Presentation</span>
+                        </button>
+                        <button onclick="openModal('https://drive.google.com/file/d/1Nlu5iFolD9JUICv9OX4sGyBDKUih3VCL/view?usp=drive_link')" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-slate-800/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
+                             <i data-lucide="file-text" class="w-6 h-6 mr-3"></i>
+                            <span>Read the PRD</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Project Summary -->
-        <section class="mt-20 max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold text-cyan-600 mb-2">The Problem</h3>
-                    <p class="text-slate-500">
-                        Existing social media platforms often lead to digital isolation. Users crave genuine, real-world connections but lack a tool to discover and join spontaneous local activities easily.
-                    </p>
+        <section class="container mx-auto px-6 py-20 md:py-24">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-cyan-600 mb-3">The Problem</h3>
+                        <p class="text-slate-500 text-lg">
+                            Event attendees struggle to find relevant people, exchange contacts efficiently, and follow up effectively. Existing tools like LinkedIn are too slow for live events, leaving valuable networking opportunities to chance.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-cyan-600 mb-3">The Solution</h3>
+                        <p class="text-slate-500 text-lg">
+                           EventConnect is a mobile app focused entirely on solving this problem. It uses AI-powered matchmaking to suggest relevant connections and an instant QR-code scan to exchange contacts, making networking simple and valuable.
+                        </p>
+                    </div>
                 </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold text-cyan-600 mb-2">Our Solution</h3>
-                    <p class="text-slate-500">
-                        An app that uses location and user interests to suggest or create small, local "micro-events." This encourages spontaneous meetups for activities like coffee, sports, or study groups.
-                    </p>
-                </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold text-cyan-600 mb-2">The Outcome</h3>
-                    <p class="text-slate-500">
-                        This concept lays the groundwork for a platform that fosters community and combats loneliness. Key outcomes include a detailed PRD, user flow diagrams, and initial low-fidelity wireframes.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Visuals / Wireframes -->
-        <section class="mt-20 max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">Key Visuals</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="bg-slate-100 p-4 rounded-lg">
-                    <img src="https://placehold.co/600x400/e2e8f0/94a3b8?text=Onboarding+Wireframe" alt="Wireframe of the app's onboarding screen" class="rounded-md w-full shadow-md">
-                    <p class="text-center text-sm text-slate-500 mt-2">Onboarding Flow</p>
-                </div>
-                <div class="bg-slate-100 p-4 rounded-lg">
-                    <img src="https://placehold.co/600x400/e2e8f0/94a3b8?text=Home+Screen+Concept" alt="Wireframe of the app's home screen" class="rounded-md w-full shadow-md">
-                     <p class="text-center text-sm text-slate-500 mt-2">Home Screen Concept</p>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                     <h3 class="text-xl font-bold text-slate-800 mb-4">My Role & Key Outcomes</h3>
+                     <ul class="space-y-4 text-slate-500">
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-cyan-500 flex-shrink-0 mt-1"></i><span><strong>Role:</strong> Product Manager (Conceptual Project)</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-cyan-500 flex-shrink-0 mt-1"></i><span>Developed a complete Product Requirements Document (PRD) from scratch.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-cyan-500 flex-shrink-0 mt-1"></i><span>Created low-fidelity wireframes and user flow diagrams for the core user journey.</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-cyan-500 flex-shrink-0 mt-1"></i><span>Defined a Go-To-Market strategy and key success metrics (KPIs).</span></li>
+                        <li class="flex items-start"><i data-lucide="check-circle" class="w-5 h-5 mr-3 text-cyan-500 flex-shrink-0 mt-1"></i><span>Conducted a competitive analysis and used the RICE framework for feature prioritization.</span></li>
+                     </ul>
                 </div>
             </div>
         </section>
 
+        <section class="py-20 md:py-24 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Visualizing the Solution</h2>
+                <p class="text-lg text-slate-500 text-center max-w-2xl mx-auto mb-16">
+                    The user journey was designed to be simple and intuitive. A user can discover relevant matches, learn more about them, and connect instantly.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-white p-4 border-2 border-slate-200 rounded-2xl shadow-md">
+                             <img src="https://placehold.co/300x600/e2e8f0/94a3b8?text=Smart+Matches+Screen" alt="Wireframe of Smart Matches screen" class="rounded-lg w-full">
+                        </div>
+                        <h3 class="font-bold text-lg mt-4">1. Discover</h3>
+                        <p class="text-slate-500">Users see a list of AI-suggested matches.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white p-4 border-2 border-slate-200 rounded-2xl shadow-md">
+                             <img src="https://placehold.co/300x600/e2e8f0/94a3b8?text=Profile+Screen" alt="Wireframe of Profile screen" class="rounded-lg w-full">
+                        </div>
+                        <h3 class="font-bold text-lg mt-4">2. Learn</h3>
+                        <p class="text-slate-500">They can view a profile to learn more.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white p-4 border-2 border-slate-200 rounded-2xl shadow-md">
+                             <img src="https://placehold.co/300x600/e2e8f0/94a3b8?text=QR+Scanner+Screen" alt="Wireframe of QR Scanner screen" class="rounded-lg w-full">
+                        </div>
+                        <h3 class="font-bold text-lg mt-4">3. Connect</h3>
+                        <p class="text-slate-500">An instant QR scan saves the connection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
     <footer class="bg-slate-800 text-white">
         <div class="container mx-auto px-6 py-8 text-center text-slate-300">
-            <p>&copy; 2024 Ravivarman. All Rights Reserved.</p>
+            <p>&copy; 2025 Ravivarman. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <div id="pdf-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4 opacity-0 pointer-events-none">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col">
+            <div class="flex justify-end p-2 border-b">
+                <button onclick="closeModal()" class="text-slate-500 hover:text-slate-800">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+            </div>
+            <div class="flex-grow p-2">
+                <iframe id="pdf-viewer" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         lucide.createIcons();
+
+        const modal = document.getElementById('pdf-modal');
+        const pdfViewer = document.getElementById('pdf-viewer');
+
+        function openModal(pdfUrl) {
+            if (!pdfUrl || pdfUrl === '#') {
+                alert('Please update the link for this document.');
+                return;
+            }
+            pdfViewer.src = pdfUrl;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeModal() {
+            pdfViewer.src = ''; // Clear the src to stop loading
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+        
+        // Close modal if escape key is pressed
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
