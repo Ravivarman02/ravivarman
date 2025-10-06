@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravivarman - Resume</title>
+    <title>Ravivarman D - Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,19 +28,22 @@
                 padding: 0;
             }
         }
+        .icon-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem; /* 8px */
+        }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <!-- Action Bar -->
     <div class="bg-white/80 backdrop-blur-lg p-4 sticky top-0 z-50 border-b no-print">
         <div class="container mx-auto flex justify-between items-center">
              <a href="index.html" class="font-medium text-slate-600 hover:text-cyan-500 transition-colors inline-flex items-center group">
                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform"></i> Back to Portfolio
             </a>
             <div>
-                <!-- IMPORTANT: Create a PDF file named 'Ravivarman_Resume.pdf' and place it in the same folder as this HTML file. -->
-                <a href="Ravivarman_Resume.pdf" download class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-5 py-2 rounded-full transition-colors shadow-sm hover:shadow-md inline-flex items-center">
+                <a href="#" download="Ravivarman_Resume.pdf" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-5 py-2 rounded-full transition-colors shadow-sm hover:shadow-md inline-flex items-center">
                     <i data-lucide="download" class="w-4 h-4 mr-2"></i> Download PDF
                 </a>
                  <button onclick="window.print()" class="ml-4 bg-slate-600 hover:bg-slate-700 text-white font-semibold px-5 py-2 rounded-full transition-colors shadow-sm hover:shadow-md inline-flex items-center">
@@ -50,96 +53,157 @@
         </div>
     </div>
 
-    <!-- Resume Content -->
     <div class="container mx-auto p-4 md:p-8">
         <div class="bg-white max-w-4xl mx-auto p-8 md:p-12 rounded-lg shadow-lg resume-container">
             
-            <!-- Header -->
             <header class="text-center border-b pb-6 mb-8">
-                <h1 class="text-4xl font-extrabold text-slate-900">Ravivarman D</h1>
-                <p class="text-lg text-slate-600 mt-2">Electronics & Communication Engineering Student</p>
-                <div class="flex justify-center space-x-6 text-sm text-slate-500 mt-4">
-                    <a href="mailto:theravivarman.d@gmail.com" class="hover:text-cyan-600">theravivarman.d@gmail.com</a>
-                    <span>|</span>
-                    <a href="https://www.linkedin.com/in/ravivarman-d" target="_blank" class="hover:text-cyan-600">linkedin.com/in/ravivarman-d</a>
-                    <span>|</span>
-                    <a href="https://github.com/Ravivarman02" target="_blank" class="hover:text-cyan-600">github.com/Ravivarman02</a>
+                <h1 class="text-4xl font-extrabold text-slate-900">RAVIVARMAN D</h1>
+                <div class="mt-4 flex justify-center items-center flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
+                    <span class="icon-link">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        <a href="tel:+919952390442" class="hover:text-cyan-600">+91 9952390442</a>
+                    </span>
+                    <span class="hidden sm:inline">|</span>
+                    <span class="icon-link">
+                         <i data-lucide="mail" class="w-4 h-4"></i>
+                        <a href="mailto:theravivarman.d@gmail.com" class="hover:text-cyan-600">theravivarman.d@gmail.com</a>
+                    </span>
+                    <span class="hidden sm:inline">|</span>
+                    <span class="icon-link">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <a href="https://linkedin.com/in/ravivarman-d" target="_blank" class="hover:text-cyan-600">linkedin.com/in/ravivarman-d</a>
+                    </span>
                 </div>
             </header>
 
-            <main>
-                <!-- Summary -->
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4">Summary</h2>
-                    <p class="text-slate-600 leading-relaxed">
-                        A dedicated and curious final-year Electronics and Communication Engineering student with a strong passion for technology, business, and research. Proven ability in project management, data analysis, and cross-functional collaboration. Seeking opportunities to apply technical skills and analytical reasoning to solve real-world challenges.
+            <main class="space-y-10">
+                <section>
+                    <h2 class="text-xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4 uppercase tracking-wider">Summary</h2>
+                    <p class="text-slate-700 leading-relaxed">
+                        [cite_start]Final-year Electronics and Communication Engineering student skilled in bridging technical projects with business objectives. [cite: 67] [cite_start]Experienced in project management, business analysis, and cross-functional collaboration, with a proven ability to lead initiatives from planning to execution. [cite: 7] [cite_start]Combines a technical background with a passion for creating user-centric solutions and driving data-informed decisions. [cite: 70]
                     </p>
                 </section>
 
-                 <!-- Experience -->
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4">Work Experience</h2>
+                 <section>
+                    <h2 class="text-xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4 uppercase tracking-wider">Work Experience</h2>
                     <div class="space-y-6">
                         <div>
-                            <div class="flex justify-between items-baseline">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
                                 <h3 class="text-lg font-bold">Summer Intern</h3>
-                                <p class="text-sm text-slate-500">June 2025 - July 2025</p>
+                                <p class="text-sm text-slate-500">June 2025 – July 2025</p>
                             </div>
                             <h4 class="font-semibold text-slate-600">Spark Minda Technical Center, Bangalore</h4>
-                            <ul class="list-disc list-inside mt-2 text-slate-600 space-y-1">
-                                <li>Conducted testing of Intelligent Transport System (ITS) devices, ensuring alignment with IS16833/UBS2 standards.</li>
-                                <li>Optimized Controller Area Network (CAN) protocol, reducing communication latency by 8ms.</li>
-                                <li>Engineered a real-time MQTT data pipeline, achieving sub-second latency for inter-device IoT communication.</li>
+                            <ul class="list-disc list-inside mt-2 text-slate-700 space-y-1 pl-2">
+                                [cite_start]<li>Conducted comprehensive testing of Intelligent Transport System (ITS) embedded devices in alignment with IS16833 and UBS2 standards. [cite: 23]</li>
+                                [cite_start]<li>Evaluated and optimized Controller Area Network (CAN) protocol implementation, reducing intra-device communication latency by 8 milliseconds. [cite: 24, 25]</li>
                             </ul>
                         </div>
                          <div>
-                            <div class="flex justify-between items-baseline">
-                                <h3 class="text-lg font-bold">Senior Collaboration Executive</h3>
-                                <p class="text-sm text-slate-500">Feb 2023 - June 2025</p>
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                                <h3 class="text-lg font-bold">Senior Core Committee Member</h3>
+                                <p class="text-sm text-slate-500">Feb 2023 – June 2025</p>
                             </div>
-                            <h4 class="font-semibold text-slate-600">Entrepreneurship Cell, VIT</h4>
-                             <ul class="list-disc list-inside mt-2 text-slate-600 space-y-1">
-                                <li>Mentored 8+ junior members in event planning and leadership, improving team project delivery times by 30%.</li>
-                                <li>Spearheaded strategic planning sessions that increased student participation in entrepreneurial events by 40%.</li>
+                            <h4 class="font-semibold text-slate-600">Entrepreneurship Cell, VIT Vellore</h4>
+                             <ul class="list-disc list-inside mt-2 text-slate-700 space-y-1 pl-2">
+                                [cite_start]<li>Mentored 8+ junior members in event planning and leadership development, improving team project delivery times by 30%. [cite: 29, 30]</li>
+                                [cite_start]<li>Guided five junior members, resulting in all taking on leadership roles within the organization the following year. [cite: 31]</li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                <!-- Education -->
-                <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4">Education</h2>
-                    <div>
-                        <div class="flex justify-between items-baseline">
-                            <h3 class="text-lg font-bold">Vellore Institute of Technology</h3>
-                            <p class="text-sm text-slate-500">Expected 2026</p>
-                        </div>
-                        <h4 class="font-semibold text-slate-600">B.Tech in Electronics and Communication Engineering</h4>
-                    </div>
-                </section>
-
-                <!-- Skills -->
                 <section>
-                    <h2 class="text-2xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4">Skills</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <h2 class="text-xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4 uppercase tracking-wider">Projects</h2>
+                    <div class="space-y-6">
                         <div>
-                            <h3 class="text-md font-bold text-slate-700 mb-2">Languages</h3>
-                            <ul class="list-disc list-inside text-slate-600">
-                                <li>Python, Java, C, SQL, Verilog</li>
+                            <h3 class="text-lg font-bold">Event Networking Mobile App - Product Requirement & Strategy</h3>
+                            <ul class="list-disc list-inside mt-2 text-slate-700 space-y-1 pl-2">
+                                [cite_start]<li>Spearheaded the creation of a comprehensive Product Requirement Document (PRD) defining product vision, user personas, and core MVP features. [cite: 95]</li>
+                                [cite_start]<li>Prioritized the MVP feature set using the RICE framework, focusing development on high-impact features like Digital Business Card (QR) and Smart Matchmaking. [cite: 96]</li>
+                                [cite_start]<li>Defined "Successful Connections Per Event" as the North Star Metric to guide product development and measure user engagement. [cite: 97]</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-md font-bold text-slate-700 mb-2">Business & Soft Skills</h3>
-                            <ul class="list-disc list-inside text-slate-600">
-                                <li>Project Management, Agile, Business Analytics, Leadership, Collaboration</li>
+                            <h3 class="text-lg font-bold">IndiGo Airlines - International Expansion Strategy</h3>
+                            <ul class="list-disc list-inside mt-2 text-slate-700 space-y-1 pl-2">
+                                [cite_start]<li>Conducted market research on 6 potential international routes using data on passenger demand, regional GDP growth, and competitor presence. [cite: 99]</li>
+                                [cite_start]<li>Prepared a financial model to estimate route profitability, forecasting 12-15% revenue growth in selected regions. [cite: 101]</li>
                             </ul>
                         </div>
                         <div>
-                            <h3 class="text-md font-bold text-slate-700 mb-2">Tools</h3>
-                            <ul class="list-disc list-inside text-slate-600">
-                                <li>Power BI, Excel (Advanced), Cadence, MATLAB</li>
+                            <h3 class="text-lg font-bold">Alert Systems for Women in Vehicles</h3>
+                            <ul class="list-disc list-inside mt-2 text-slate-700 space-y-1 pl-2">
+                                [cite_start]<li>Designed a portable safety device using Arduino Uno, GPS, and GSM modules to send instant SOS alerts with real-time GPS location. [cite: 39]</li>
+                                [cite_start]<li>Programmed the GPS module for a location accuracy of under 5 meters and message transmission within 3 seconds of activation. [cite: 41]</li>
                             </ul>
                         </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2 class="text-xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4 uppercase tracking-wider">Education</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                                <h3 class="text-lg font-bold">Vellore Institute of Technology, Vellore</h3>
+                                <p class="text-sm text-slate-500">Graduating May 2026</p>
+                            </div>
+                            <h4 class="font-semibold text-slate-600">Bachelor of Technology in Electronics & Communication Engineering</h4>
+                        </div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline">
+                                <h3 class="text-lg font-bold">SRV Matriculation Higher Secondary School, Trichy</h3>
+                                 <p class="text-sm text-slate-500">Completed May 2022</p>
+                            </div>
+                            <h4 class="font-semibold text-slate-600">Higher Secondary Certification</h4>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4 uppercase tracking-wider">Skills</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-md font-bold text-slate-700 mb-2">Business & Product</h3>
+                            <ul class="list-disc list-inside text-slate-700 space-y-1">
+                                [cite_start]<li>Project Management (Agile) [cite: 16]</li>
+                                [cite_start]<li>Business Analysis [cite: 16]</li>
+                                [cite_start]<li>Market & User Research [cite: 73]</li>
+                                [cite_start]<li>Product Roadmapping [cite: 73]</li>
+                                [cite_start]<li>Policy Analysis [cite: 16, 73]</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-md font-bold text-slate-700 mb-2">Technical & Tools</h3>
+                            <ul class="list-disc list-inside text-slate-700 space-y-1">
+                                [cite_start]<li>SQL, Python, Java, C [cite: 10, 79]</li>
+                                [cite_start]<li>Power BI, Excel, MATLAB [cite: 14, 75]</li>
+                                [cite_start]<li>Figma, JIRA, Notion [cite: 75, 77]</li>
+                                [cite_start]<li>Linux, AWS, Google Cloud [cite: 13, 77, 79]</li>
+                                [cite_start]<li>Computer Networking [cite: 13, 79]</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-md font-bold text-slate-700 mb-2">Soft Skills</h3>
+                            <ul class="list-disc list-inside text-slate-700 space-y-1">
+                                [cite_start]<li>Leadership [cite: 18]</li>
+                                [cite_start]<li>Cross-Functional Collaboration [cite: 16]</li>
+                                [cite_start]<li>Research and Operations [cite: 18, 81]</li>
+                                [cite_start]<li>Conflict Management [cite: 18, 81]</li>
+                                [cite_start]<li>Insight Communication [cite: 16]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-cyan-600 border-b-2 border-cyan-200 pb-2 mb-4 uppercase tracking-wider">Certifications</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-slate-700">
+                        [cite_start]<p>Google Project Management Professional Certificate [cite: 59, 117]</p>
+                        [cite_start]<p>AWS Certified Cloud Practitioner [cite: 55, 116]</p>
+                        [cite_start]<p>Google IT Support Professional Certificate [cite: 61, 118]</p>
+                        [cite_start]<p>Hands-on Introduction to Linux Commands and Shell Scripting [cite: 63, 119]</p>
+                        [cite_start]<p>International Business 1, UNAM [cite: 120]</p>
                     </div>
                 </section>
             </main>
