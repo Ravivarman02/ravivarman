@@ -85,7 +85,7 @@
                     </div>
                     <button id="slideshow-btn" class="font-bold hover:text-cyan-400 transition-colors">Slideshow</button>
                 </div>
-                <div id="canvas-container" class="bg-white flex justify-center items-center overflow-hidden">
+                <div id="canvas-container" class="bg-white flex justify-center items-start overflow-y-auto max-h-[75vh]">
                     <canvas id="pdf-canvas"></canvas>
                 </div>
             </div>
@@ -127,7 +127,6 @@
     <script type="module">
         lucide.createIcons();
 
-        // PDF.js worker from CDN
         const { pdfjsLib } = globalThis;
         pdfjsLib.GlobalWorkerOptions.workerSrc = `https://mozilla.github.io/pdf.js/build/pdf.worker.mjs`;
 
@@ -142,26 +141,16 @@
         const canvas = document.getElementById('pdf-canvas');
         const pageNumElement = document.getElementById('page-num');
         const slideshowBtn = document.getElementById('slideshow-btn');
-
-        // --- THIS IS THE UPDATED FUNCTION ---
+        
         async function renderPage(num) {
             const page = await pdfDoc.getPage(num);
-            
-            // Get the available width of the container
             const containerWidth = canvasContainer.clientWidth;
-            
-            // Get the page's original size and calculate the scale
             const viewportOrig = page.getViewport({ scale: 1.0 });
             const scale = containerWidth / viewportOrig.width;
-            
-            // Create a new viewport with the dynamic scale
             const viewport = page.getViewport({ scale: scale });
-
-            // Set the canvas size and render
             const context = canvas.getContext('2d');
             canvas.height = viewport.height;
             canvas.width = viewport.width;
-
             const renderContext = {
                 canvasContext: context,
                 viewport: viewport
@@ -235,11 +224,9 @@
             pdfDoc = null;
         };
 
-        // Event Listeners for controls
         document.getElementById('prev-page').addEventListener('click', goToPrevPage);
         document.getElementById('next-page').addEventListener('click', goToNextPage);
         slideshowBtn.addEventListener('click', toggleSlideshow);
-
     </script>
 </body>
 </html>
