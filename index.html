@@ -13,15 +13,13 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Restored the original dot-pattern background */
         .hero-bg {
             background-color: #f0fdfa;
             background-image: radial-gradient(#06b6d41a 1px, transparent 1px);
             background-size: 20px 20px;
         }
-        /* Custom class for subtle glass effect on navbar */
         .glass-nav {
-            background-color: rgba(240, 253, 250, 0.8); /* Adjusted to match new bg */
+            background-color: rgba(240, 253, 250, 0.8);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -87,47 +85,59 @@
         </section>
 
         <section id="about" class="py-24">
-            <h2 class="text-3xl font-bold text-slate-900 mb-8">About Me</h2>
-            <div class="text-lg text-slate-600 space-y-4">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">About Me</h2>
+            <div class="text-lg text-slate-600 space-y-4 max-w-3xl mx-auto text-center">
                 <p>
                     Hello! I'm Ravivarman, a dedicated and curious final-year student at Vellore Institute of Technology, pursuing a Bachelor’s in Electronics and Communication Engineering. My journey has been shaped by a passion for communication technologies, artificial intelligence, business, and research.
                 </p>
                 <p>
                     I thrive at the intersection of technology and real-world impact—whether it's building smart systems, analyzing networks, or contributing to global tech initiatives. Outside of academics, I enjoy working on innovative side projects and exploring international policy.
                 </p>
-                 <div class="mt-6 pt-4 border-t border-slate-200">
-                    <h4 class="text-md font-semibold text-slate-800">Education</h4>
-                    <p class="text-slate-600">Vellore Institute of Technology</p>
-                    <p class="text-sm text-slate-500">B.Tech Electronics and Communication, 2026</p>
-                </div>
+            </div>
+             <div class="mt-12 max-w-2xl mx-auto p-8 bg-white/60 rounded-xl shadow-sm border border-slate-200/80">
+                <h3 class="text-2xl font-bold text-cyan-700 mb-4 text-center">Education</h3>
+                <p class="text-xl font-semibold text-slate-800 text-center">Vellore Institute of Technology</p>
+                <p class="text-lg text-slate-600 text-center mt-1">B.Tech Electronics and Communication, 2026</p>
             </div>
         </section>
 
         <section id="skills" class="py-24">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12">Technical Skills</h2>
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Technical Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="bg-white/50 p-6 rounded-xl shadow-sm">
                     <h3 class="text-lg font-bold text-cyan-600 mb-4">Languages</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li>Python</li><li>Java</li><li>C</li><li>SQL</li><li>Verilog</li>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Python</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Java</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>C</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>SQL</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Verilog</li>
                     </ul>
                 </div>
                 <div class="bg-white/50 p-6 rounded-xl shadow-sm">
                     <h3 class="text-lg font-bold text-cyan-600 mb-4">Business</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                       <li>Project Management</li><li>Agile</li><li>Business Analytics</li><li>Collaboration</li>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Project Management</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Agile</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Business Analytics</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Collaboration</li>
                     </ul>
                 </div>
                 <div class="bg-white/50 p-6 rounded-xl shadow-sm">
                     <h3 class="text-lg font-bold text-cyan-600 mb-4">Tools</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li>Power BI</li><li>Excel</li><li>Cadence</li><li>MATLAB</li>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Power BI</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Excel</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Cadence</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>MATLAB</li>
                     </ul>
                 </div>
                 <div class="bg-white/50 p-6 rounded-xl shadow-sm">
                     <h3 class="text-lg font-bold text-cyan-600 mb-4">Soft Skills</h3>
-                    <ul class="space-y-2 text-slate-600 text-sm">
-                        <li>Research & Ops</li><li>Leadership</li><li>Analytical Reasoning</li>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Research & Ops</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Leadership</li>
+                        <li class="flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-cyan-500"></i>Analytical Reasoning</li>
                     </ul>
                 </div>
             </div>
@@ -199,7 +209,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-4 gap-4">
+                 <div class="grid md:grid-cols-4 gap-4">
                     <div class="md:col-span-1"><p class="text-sm text-slate-500">Feb 2023 – June 2025</p></div>
                     <div class="md:col-span-3">
                         <h3 class="text-lg font-semibold text-slate-800">Senior Collaboration Executive</h3>
