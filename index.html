@@ -12,26 +12,33 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* A lighter, cleaner background */
+        }
+        /* Restored the original dot-pattern background */
+        .hero-bg {
+            background-color: #f0fdfa;
+            background-image: radial-gradient(#06b6d41a 1px, transparent 1px);
+            background-size: 20px 20px;
         }
         /* Custom class for subtle glass effect on navbar */
         .glass-nav {
-            background-color: rgba(248, 250, 252, 0.8);
+            background-color: rgba(240, 253, 250, 0.8); /* Adjusted to match new bg */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="text-slate-700 antialiased">
+<body class="text-slate-700 antialiased hero-bg">
 
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-bold text-slate-900">Ravivarman</a>
             <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
                 <a href="#about" class="hover:text-cyan-600 transition-colors">About</a>
-                <a href="#experience" class="hover:text-cyan-600 transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-cyan-600 transition-colors">Skills</a>
+                <a href="#certifications" class="hover:text-cyan-600 transition-colors">Certifications</a>
                 <a href="#projects" class="hover:text-cyan-600 transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-cyan-600 transition-colors">Experience</a>
                 <a href="resume.html" class="hover:text-cyan-600 transition-colors">Resume</a>
                 <a href="#contact" class="bg-slate-800 hover:bg-slate-900 text-white font-semibold px-4 py-2 rounded-md transition-colors">Contact</a>
             </div>
@@ -41,27 +48,37 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg">
             <a href="#about" class="block py-3 px-6 text-sm hover:bg-slate-100">About</a>
-            <a href="#experience" class="block py-3 px-6 text-sm hover:bg-slate-100">Experience</a>
+            <a href="#skills" class="block py-3 px-6 text-sm hover:bg-slate-100">Skills</a>
+            <a href="#certifications" class="block py-3 px-6 text-sm hover:bg-slate-100">Certifications</a>
             <a href="#projects" class="block py-3 px-6 text-sm hover:bg-slate-100">Projects</a>
+            <a href="#experience" class="block py-3 px-6 text-sm hover:bg-slate-100">Experience</a>
             <a href="resume.html" class="block py-3 px-6 text-sm hover:bg-slate-100">Resume</a>
             <a href="#contact" class="block py-3 px-6 text-sm hover:bg-slate-100">Contact</a>
         </div>
     </header>
 
-    <main class="container mx-auto max-w-5xl px-6 pt-32">
+    <main class="container mx-auto max-w-4xl px-6 pt-32">
 
         <section id="hero" class="min-h-[70vh] flex flex-col justify-center">
             <div class="max-w-3xl">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">
-                    Ravivarman
+                    Hi, I'm <span class="text-cyan-600">Ravivarman</span>
                 </h1>
-                <h2 class="text-xl md:text-2xl font-medium text-cyan-600 mt-2">
-                    Final Year Electronics & Communication Student
+                <h2 class="text-xl md:text-2xl font-medium text-slate-700 mt-2">
+                    A Final Year Electronics & Communication Student
                 </h2>
                 <p class="text-lg text-slate-600 mt-6">
                     Passionate about the intersection of technology, business, and innovation. Exploring how communication systems and AI can be leveraged to solve global challenges and create meaningful impact.
                 </p>
-                <div class="mt-8 flex space-x-5">
+                <div class="mt-10 flex items-center space-x-6">
+                    <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-7 rounded-full transition-all duration-300 shadow-lg hover:shadow-cyan-500/40">
+                        View My Work
+                    </a>
+                    <a href="resume.html" class="font-semibold text-slate-700 hover:text-cyan-600 transition-colors inline-flex items-center group">
+                        View Resume <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="mt-10 flex space-x-5">
                     <a href="https://www.linkedin.com/in/ravivarman-d" target="_blank" class="text-slate-500 hover:text-cyan-600 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
                     <a href="https://github.com/Ravivarman02" target="_blank" class="text-slate-500 hover:text-cyan-600 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
                     <a href="https://www.instagram.com/_ravivarman/" target="_blank" class="text-slate-500 hover:text-cyan-600 transition-colors"><i data-lucide="instagram" class="w-6 h-6"></i></a>
@@ -69,108 +86,97 @@
             </div>
         </section>
 
-        <section id="about" class="py-20 md:py-28">
-             <div class="grid md:grid-cols-5 gap-10 md:gap-16 items-start">
-                <div class="md:col-span-2">
-                    <h2 class="text-2xl font-bold text-slate-900">About Me</h2>
-                </div>
-                <div class="md:col-span-3 text-lg text-slate-600 space-y-4">
-                    <p>
-                        Hello! I'm Ravivarman, a dedicated and curious final-year student at Vellore Institute of Technology, pursuing a Bachelor’s in Electronics and Communication Engineering. My journey has been shaped by a passion for communication technologies, artificial intelligence, business, and research.
-                    </p>
-                    <p>
-                        I thrive at the intersection of technology and real-world impact—whether it's building smart systems, analyzing networks, or contributing to global tech initiatives. Outside of academics, I enjoy working on innovative side projects and exploring international policy.
-                    </p>
-                     <div class="mt-6 pt-4 border-t border-slate-200">
-                        <h4 class="text-md font-semibold text-slate-800">Education</h4>
-                        <p class="text-slate-600">Vellore Institute of Technology</p>
-                        <p class="text-sm text-slate-500">B.Tech Electronics and Communication, 2026</p>
-                    </div>
+        <section id="about" class="py-24">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">About Me</h2>
+            <div class="text-lg text-slate-600 space-y-4">
+                <p>
+                    Hello! I'm Ravivarman, a dedicated and curious final-year student at Vellore Institute of Technology, pursuing a Bachelor’s in Electronics and Communication Engineering. My journey has been shaped by a passion for communication technologies, artificial intelligence, business, and research.
+                </p>
+                <p>
+                    I thrive at the intersection of technology and real-world impact—whether it's building smart systems, analyzing networks, or contributing to global tech initiatives. Outside of academics, I enjoy working on innovative side projects and exploring international policy.
+                </p>
+                 <div class="mt-6 pt-4 border-t border-slate-200">
+                    <h4 class="text-md font-semibold text-slate-800">Education</h4>
+                    <p class="text-slate-600">Vellore Institute of Technology</p>
+                    <p class="text-sm text-slate-500">B.Tech Electronics and Communication, 2026</p>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="py-20 md:py-28">
-            <h2 class="text-2xl font-bold text-slate-900 mb-12">Work Experience</h2>
-            <div class="space-y-12">
-                <div class="grid md:grid-cols-4 gap-4">
-                    <div class="md:col-span-1">
-                        <p class="text-sm text-slate-500">June 2025 – July 2025</p>
-                    </div>
-                    <div class="md:col-span-3">
-                        <h3 class="text-lg font-semibold text-slate-800">Summer Intern at Spark Minda</h3>
-                        <p class="text-slate-600 mt-2">Conducted testing of Intelligent Transport System (ITS) devices, evaluated CAN protocol to reduce latency by 8ms, and engineered a real-time MQTT data pipeline for IoT devices.</p>
-                    </div>
+        <section id="skills" class="py-24">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white/50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-cyan-600 mb-4">Languages</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>Python</li><li>Java</li><li>C</li><li>SQL</li><li>Verilog</li>
+                    </ul>
                 </div>
-                <div class="grid md:grid-cols-4 gap-4">
-                    <div class="md:col-span-1">
-                        <p class="text-sm text-slate-500">Feb 2023 – June 2025</p>
-                    </div>
-                    <div class="md:col-span-3">
-                        <h3 class="text-lg font-semibold text-slate-800">Senior Collaboration Executive at E-Cell, VIT</h3>
-                        <p class="text-slate-600 mt-2">Mentored junior members to improve project delivery times by 30%, guided teams in event planning, and spearheaded strategies that increased student participation by 40%.</p>
-                    </div>
+                <div class="bg-white/50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-cyan-600 mb-4">Business</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                       <li>Project Management</li><li>Agile</li><li>Business Analytics</li><li>Collaboration</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20 md:py-28">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Skills</h2>
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="font-semibold text-slate-800 mb-2">Languages</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Java</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">C</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">SQL</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Verilog</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold text-slate-800 mb-2">Tools & Business</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Power BI</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Excel</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Project Management</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">Agile</span>
-                                <span class="bg-slate-200 text-slate-700 text-sm font-medium px-3 py-1 rounded-full">MATLAB</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="bg-white/50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-cyan-600 mb-4">Tools</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>Power BI</li><li>Excel</li><li>Cadence</li><li>MATLAB</li>
+                    </ul>
                 </div>
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Certifications</h2>
-                    <ul class="space-y-4">
-                        <li><a href="https://www.coursera.org/account/accomplishments/specialization/NS8357RERUGI" target="_blank" class="font-medium hover:text-cyan-600 transition-colors group">Google IT Support <i class="inline-block w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i></a></li>
-                        <li><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/3330e338eefb48a9a6aff0a9b925b4b9" target="_blank" class="font-medium hover:text-cyan-600 transition-colors group">AWS Certified Cloud Practitioner <i class="inline-block w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i></a></li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/records/FYMR212Q8WPZ" target="_blank" class="font-medium hover:text-cyan-600 transition-colors group">Data Analysis with Microsoft Excel <i class="inline-block w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i></a></li>
-                        <li><a href="https://www.coursera.org/account/accomplishments/records/BYTJG1M7RL33" target="_blank" class="font-medium hover:text-cyan-600 transition-colors group">Linux Commands & Shell Scripting <i class="inline-block w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i></a></li>
+                <div class="bg-white/50 p-6 rounded-xl shadow-sm">
+                    <h3 class="text-lg font-bold text-cyan-600 mb-4">Soft Skills</h3>
+                    <ul class="space-y-2 text-slate-600 text-sm">
+                        <li>Research & Ops</li><li>Leadership</li><li>Analytical Reasoning</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-20 md:py-28">
-            <h2 class="text-2xl font-bold text-slate-900 mb-12">Featured Projects</h2>
+        <section id="certifications" class="py-24">
+            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Certifications & Achievements</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white/50 rounded-lg shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-slate-800">Google IT Support Specialization</h3>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/NS8357RERUGI" target="_blank" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700">Show Credential</a>
+                </div>
+                <div class="bg-white/50 rounded-lg shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-slate-800">AWS Certified Cloud Practitioner</h3>
+                    <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/3330e338eefb48a9a6aff0a9b925b4b9" target="_blank" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700">Show Credential</a>
+                </div>
+                <div class="bg-white/50 rounded-lg shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-slate-800">Data Analysis with Microsoft Excel</h3>
+                    <a href="https://www.coursera.org/account/accomplishments/records/FYMR212Q8WPZ" target="_blank" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700">Show Credential</a>
+                </div>
+                <div class="bg-white/50 rounded-lg shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-slate-800">Linux Commands & Shell Scripting</h3>
+                    <a href="https://www.coursera.org/account/accomplishments/records/BYTJG1M7RL33" target="_blank" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700">Show Credential</a>
+                </div>
+                <div class="bg-white/50 rounded-lg shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-slate-800">Global Diplomacy in the Modern World</h3>
+                    <a href="https://www.coursera.org/account/accomplishments/records/P59VPGX3UPQ8" target="_blank" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700">Show Credential</a>
+                </div>
+                <div class="bg-white/50 rounded-lg shadow-sm p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-slate-800">OCI AI Foundations Associate</h3>
+                    <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=44DC780CAC83CB345AAB0791B6AF7C7B79FCBA394114B6E50FA48269FB043D29" target="_blank" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700">Show Credential</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12">Featured Projects</h2>
             <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
-                <a href="project-pm.html" class="block bg-white p-6 rounded-lg border border-slate-200 hover:border-cyan-500 hover:shadow-lg transition-all duration-300 group">
+                <a href="project-pm.html" class="block bg-white/50 p-6 rounded-lg border border-slate-200/0 hover:border-cyan-500 hover:shadow-lg transition-all duration-300 group">
                     <h3 class="text-lg font-bold text-slate-800 mb-1">New Social Networking App Concept</h3>
                     <p class="text-slate-600 mb-4">A conceptual project defining a new mobile app to connect people through shared local experiences. Includes market research, PRD, and initial wireframes.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-sm font-semibold text-slate-700">Product Strategy</span>
-                        <span class="inline-block bg-slate-100 rounded-full px-3 py-1 text-sm font-semibold text-slate-700">UI/UX</span>
-                    </div>
                     <span class="font-semibold text-cyan-600 text-sm">View Project Details <i class="inline-block w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i></span>
                 </a>
-                <a href="#" class="block bg-white p-6 rounded-lg border border-slate-200 hover:border-cyan-500 hover:shadow-lg transition-all duration-300 group">
+                <a href="#" class="block bg-white/50 p-6 rounded-lg border border-slate-200/0 hover:border-cyan-500 hover:shadow-lg transition-all duration-300 group">
                     <h3 class="text-lg font-bold text-slate-800 mb-1">Alert System for Women's Safety</h3>
                     <p class="text-slate-600 mb-4">A smart, real-time alert system using GPS and GSM to enhance safety in vehicles.</p>
                     <span class="font-semibold text-cyan-600 text-sm">View on GitHub <i class="inline-block w-4 h-4 ml-1" data-lucide="github"></i></span>
                 </a>
-                <a href="#" class="block bg-white p-6 rounded-lg border border-slate-200 hover:border-cyan-500 hover:shadow-lg transition-all duration-300 group">
+                <a href="#" class="block bg-white/50 p-6 rounded-lg border border-slate-200/0 hover:border-cyan-500 hover:shadow-lg transition-all duration-300 group">
                     <h3 class="text-lg font-bold text-slate-800 mb-1">MANET Routing Protocol Analysis</h3>
                     <p class="text-slate-600 mb-4">Comprehensive performance analysis of AODV, DSR, and DSDV routing protocols in MANETs.</p>
                     <span class="font-semibold text-cyan-600 text-sm">View Paper <i class="inline-block w-4 h-4 ml-1" data-lucide="file-text"></i></span>
@@ -178,7 +184,37 @@
             </div>
         </section>
 
-        <section id="contact" class="py-20 md:py-28 text-center">
+        <section id="experience" class="py-24">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12">Work Experience</h2>
+            <div class="space-y-12">
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1"><p class="text-sm text-slate-500">June 2025 – July 2025</p></div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-lg font-semibold text-slate-800">Summer Intern</h3>
+                        <p class="font-medium text-slate-600">Spark Minda Technical Center, Bangalore</p>
+                        <ul class="list-disc list-inside mt-2 text-slate-600 space-y-1">
+                            <li>Conducted testing of Intelligent Transport System (ITS) embedded devices aligned with IS16833 and UBS2 standards.</li>
+                            <li>Evaluated CAN protocol, identifying optimizations that reduced latency by 8ms.</li>
+                            <li>Engineered a real-time MQTT data pipeline, achieving sub-second latency for 2+ IoT devices.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="md:col-span-1"><p class="text-sm text-slate-500">Feb 2023 – June 2025</p></div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-lg font-semibold text-slate-800">Senior Collaboration Executive</h3>
+                         <p class="font-medium text-slate-600">Entrepreneurship Cell, VIT</p>
+                        <ul class="list-disc list-inside mt-2 text-slate-600 space-y-1">
+                            <li>Mentored 8+ junior members, improving team project delivery times by 30%.</li>
+                            <li>Guided five members in event planning, leading to their promotion to leadership roles.</li>
+                            <li>Spearheaded strategic planning, increasing student participation in events by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Get In Touch</h2>
             <p class="mt-4 max-w-xl mx-auto text-lg text-slate-600">
                 I'm currently seeking new opportunities. My inbox is always open, whether you have a question or just want to say hi.
@@ -189,7 +225,7 @@
         </section>
     </main>
 
-    <footer class="border-t border-slate-200">
+    <footer class="border-t border-slate-200/50">
         <div class="container mx-auto max-w-5xl px-6 py-8 text-center text-slate-500">
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="https://www.linkedin.com/in/ravivarman-d" target="_blank" class="hover:text-cyan-600 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
