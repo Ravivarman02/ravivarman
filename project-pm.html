@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -18,9 +19,8 @@
             background-image: radial-gradient(#06b6d41a 1px, transparent 1px);
             background-size: 20px 20px;
         }
-        /* Styles for the Modal */
-        .modal {
-            transition: opacity 0.25s ease;
+        #pdf-viewer-container {
+            transition: opacity 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -61,11 +61,11 @@
                 <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg">
                     <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Project Deliverables</h2>
                     <div class="grid sm:grid-cols-2 gap-6">
-                        <button onclick="openModal('https://docs.google.com/presentation/d/1h2o3DUBVpi7_UkZSTH-i6d1_JfA_BOl7/edit?usp=sharing&ouid=107305099867451998626&rtpof=true&sd=true')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
+                        <button onclick="openViewer('https://drive.google.com/file/d/1iJGyOJh43-B5C4Tmqe1XrHg-80oqodgW/view?usp=sharing')" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
                             <i data-lucide="presentation" class="w-6 h-6 mr-3"></i>
                             <span>View Presentation</span>
                         </button>
-                        <button onclick="openModal('https://drive.google.com/file/d/1Nlu5iFolD9JUICv9OX4sGyBDKUih3VCL/view?usp=drive_link')" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-slate-800/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
+                        <button onclick="openViewer('https://drive.google.com/file/d/1Nlu5iFolD9JUICv9OX4sGyBDKUih3VCL/view?usp=drive_link')" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-slate-800/40 transform hover:-translate-y-1 flex items-center justify-center text-center">
                              <i data-lucide="file-text" class="w-6 h-6 mr-3"></i>
                             <span>Read the PRD</span>
                         </button>
@@ -74,20 +74,33 @@
             </div>
         </section>
 
-        <section class="container mx-auto px-6 py-20 md:py-24">
+        <section id="pdf-viewer-container" class="hidden container mx-auto px-6 py-12">
+            <div class="bg-slate-800 rounded-2xl shadow-2xl p-4 max-w-4xl mx-auto">
+                <div id="viewer-controls" class="flex items-center justify-between text-white p-2 mb-2 border-b border-slate-600">
+                    <button id="close-viewer" onclick="closeViewer()" class="font-bold hover:text-cyan-400 transition-colors">Close</button>
+                    <div class="flex items-center space-x-4">
+                        <button id="prev-page" class="hover:text-cyan-400 transition-colors"><i data-lucide="arrow-left-circle"></i></button>
+                        <span id="page-num" class="text-sm"></span>
+                        <button id="next-page" class="hover:text-cyan-400 transition-colors"><i data-lucide="arrow-right-circle"></i></button>
+                    </div>
+                    <button id="slideshow-btn" class="font-bold hover:text-cyan-400 transition-colors">Slideshow</button>
+                </div>
+                <div class="bg-white flex justify-center items-center">
+                    <canvas id="pdf-canvas"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-content" class="container mx-auto px-6 py-20 md:py-24">
             <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
                     <div>
                         <h3 class="text-2xl font-bold text-cyan-600 mb-3">The Problem</h3>
-                        <p class="text-slate-500 text-lg">
-                            Event attendees struggle to find relevant people, exchange contacts efficiently, and follow up effectively. Existing tools like LinkedIn are too slow for live events, leaving valuable networking opportunities to chance.
-                        </p>
+                        <p class="text-slate-500 text-lg">Event attendees struggle to find relevant people, exchange contacts efficiently, and follow up effectively. Existing tools like LinkedIn are too slow for live events, leaving valuable networking opportunities to chance.</p>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold text-cyan-600 mb-3">The Solution</h3>
-                        <p class="text-slate-500 text-lg">
-                           EventConnect is a mobile app focused entirely on solving this problem. It uses AI-powered matchmaking to suggest relevant connections and an instant QR-code scan to exchange contacts, making networking simple and valuable.
-                        </p>
+                        <p class="text-slate-500 text-lg">EventConnect is a mobile app focused entirely on solving this problem. It uses AI-powered matchmaking to suggest relevant connections and an instant QR-code scan to exchange contacts, making networking simple and valuable.</p>
                     </div>
                 </div>
                 <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
@@ -102,38 +115,7 @@
                 </div>
             </div>
         </section>
-
-        <section class="py-20 md:py-24 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Visualizing the Solution</h2>
-                <p class="text-lg text-slate-500 text-center max-w-2xl mx-auto mb-16">
-                    The user journey was designed to be simple and intuitive. A user can discover relevant matches, learn more about them, and connect instantly.
-                </p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="bg-white p-4 border-2 border-slate-200 rounded-2xl shadow-md">
-                             <img src="https://placehold.co/300x600/e2e8f0/94a3b8?text=Smart+Matches+Screen" alt="Wireframe of Smart Matches screen" class="rounded-lg w-full">
-                        </div>
-                        <h3 class="font-bold text-lg mt-4">1. Discover</h3>
-                        <p class="text-slate-500">Users see a list of AI-suggested matches.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-white p-4 border-2 border-slate-200 rounded-2xl shadow-md">
-                             <img src="https://placehold.co/300x600/e2e8f0/94a3b8?text=Profile+Screen" alt="Wireframe of Profile screen" class="rounded-lg w-full">
-                        </div>
-                        <h3 class="font-bold text-lg mt-4">2. Learn</h3>
-                        <p class="text-slate-500">They can view a profile to learn more.</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-white p-4 border-2 border-slate-200 rounded-2xl shadow-md">
-                             <img src="https://placehold.co/300x600/e2e8f0/94a3b8?text=QR+Scanner+Screen" alt="Wireframe of QR Scanner screen" class="rounded-lg w-full">
-                        </div>
-                        <h3 class="font-bold text-lg mt-4">3. Connect</h3>
-                        <p class="text-slate-500">An instant QR scan saves the connection.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
     </main>
 
     <footer class="bg-slate-800 text-white">
@@ -142,46 +124,110 @@
         </div>
     </footer>
 
-    <div id="pdf-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 p-4 opacity-0 pointer-events-none">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl h-[90vh] flex flex-col">
-            <div class="flex justify-end p-2 border-b">
-                <button onclick="closeModal()" class="text-slate-500 hover:text-slate-800">
-                    <i data-lucide="x" class="w-8 h-8"></i>
-                </button>
-            </div>
-            <div class="flex-grow p-2">
-                <iframe id="pdf-viewer" class="w-full h-full" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-
-
-    <script>
+    <script type="module">
         lucide.createIcons();
 
-        const modal = document.getElementById('pdf-modal');
-        const pdfViewer = document.getElementById('pdf-viewer');
+        // PDF.js worker from CDN
+        const { pdfjsLib } = globalThis;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://mozilla.github.io/pdf.js/build/pdf.worker.mjs`;
 
-        function openModal(pdfUrl) {
-            if (!pdfUrl || pdfUrl === '#') {
+        let pdfDoc = null;
+        let pageNum = 1;
+        let totalPages = 0;
+        let isSlideshowActive = false;
+        let slideshowInterval = null;
+
+        const viewerContainer = document.getElementById('pdf-viewer-container');
+        const canvas = document.getElementById('pdf-canvas');
+        const pageNumElement = document.getElementById('page-num');
+        const slideshowBtn = document.getElementById('slideshow-btn');
+
+        async function renderPage(num) {
+            const page = await pdfDoc.getPage(num);
+            const viewport = page.getViewport({ scale: 1.5 });
+            const context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport
+            };
+            await page.render(renderContext).promise;
+            pageNumElement.textContent = `Page ${num} of ${totalPages}`;
+        }
+
+        function goToPrevPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            renderPage(pageNum);
+        }
+
+        function goToNextPage() {
+            if (pageNum >= totalPages) {
+                // If slideshow is active and reaches the end, stop it
+                if (isSlideshowActive) {
+                    stopSlideshow();
+                }
+                return;
+            }
+            pageNum++;
+            renderPage(pageNum);
+        }
+
+        function startSlideshow() {
+            isSlideshowActive = true;
+            slideshowBtn.textContent = 'Stop Slideshow';
+            goToNextPage(); // Go to the next slide immediately
+            slideshowInterval = setInterval(goToNextPage, 5000); // 5 seconds per slide
+        }
+
+        function stopSlideshow() {
+            isSlideshowActive = false;
+            slideshowBtn.textContent = 'Slideshow';
+            clearInterval(slideshowInterval);
+        }
+
+        function toggleSlideshow() {
+            if (isSlideshowActive) {
+                stopSlideshow();
+            } else {
+                startSlideshow();
+            }
+        }
+
+        window.openViewer = async (url) => {
+            if (!url || url === '#') {
                 alert('Please update the link for this document.');
                 return;
             }
-            pdfViewer.src = pdfUrl;
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-        }
+            stopSlideshow(); // Ensure any previous slideshow is stopped
+            viewerContainer.classList.remove('hidden');
+            viewerContainer.scrollIntoView({ behavior: 'smooth' });
 
-        function closeModal() {
-            pdfViewer.src = ''; // Clear the src to stop loading
-            modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-        
-        // Close modal if escape key is pressed
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('pointer-events-none')) {
-                closeModal();
+            try {
+                const loadingTask = pdfjsLib.getDocument(url);
+                pdfDoc = await loadingTask.promise;
+                totalPages = pdfDoc.numPages;
+                pageNum = 1;
+                renderPage(pageNum);
+            } catch (err) {
+                alert('Error loading document. Please check the link and CORS policy.');
+                console.error(err);
             }
-        });
+        };
+
+        window.closeViewer = () => {
+            stopSlideshow();
+            viewerContainer.classList.add('hidden');
+            pdfDoc = null;
+        };
+
+        // Event Listeners for controls
+        document.getElementById('prev-page').addEventListener('click', goToPrevPage);
+        document.getElementById('next-page').addEventListener('click', goToNextPage);
+        slideshowBtn.addEventListener('click', toggleSlideshow);
+
     </script>
 </body>
 </html>
