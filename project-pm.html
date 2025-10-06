@@ -85,7 +85,7 @@
                     </div>
                     <button id="slideshow-btn" class="font-bold hover:text-cyan-400 transition-colors">Slideshow</button>
                 </div>
-                <div class="bg-white flex justify-center items-center">
+                <div id="canvas-container" class="bg-white flex justify-center items-center overflow-hidden">
                     <canvas id="pdf-canvas"></canvas>
                 </div>
             </div>
@@ -138,13 +138,26 @@
         let slideshowInterval = null;
 
         const viewerContainer = document.getElementById('pdf-viewer-container');
+        const canvasContainer = document.getElementById('canvas-container');
         const canvas = document.getElementById('pdf-canvas');
         const pageNumElement = document.getElementById('page-num');
         const slideshowBtn = document.getElementById('slideshow-btn');
 
+        // --- THIS IS THE UPDATED FUNCTION ---
         async function renderPage(num) {
             const page = await pdfDoc.getPage(num);
-            const viewport = page.getViewport({ scale: 1.5 });
+            
+            // Get the available width of the container
+            const containerWidth = canvasContainer.clientWidth;
+            
+            // Get the page's original size and calculate the scale
+            const viewportOrig = page.getViewport({ scale: 1.0 });
+            const scale = containerWidth / viewportOrig.width;
+            
+            // Create a new viewport with the dynamic scale
+            const viewport = page.getViewport({ scale: scale });
+
+            // Set the canvas size and render
             const context = canvas.getContext('2d');
             canvas.height = viewport.height;
             canvas.width = viewport.width;
@@ -165,7 +178,6 @@
 
         function goToNextPage() {
             if (pageNum >= totalPages) {
-                // If slideshow is active and reaches the end, stop it
                 if (isSlideshowActive) {
                     stopSlideshow();
                 }
@@ -178,8 +190,8 @@
         function startSlideshow() {
             isSlideshowActive = true;
             slideshowBtn.textContent = 'Stop Slideshow';
-            goToNextPage(); // Go to the next slide immediately
-            slideshowInterval = setInterval(goToNextPage, 5000); // 5 seconds per slide
+            goToNextPage();
+            slideshowInterval = setInterval(goToNextPage, 5000);
         }
 
         function stopSlideshow() {
@@ -201,7 +213,7 @@
                 alert('Please update the link for this document.');
                 return;
             }
-            stopSlideshow(); // Ensure any previous slideshow is stopped
+            stopSlideshow();
             viewerContainer.classList.remove('hidden');
             viewerContainer.scrollIntoView({ behavior: 'smooth' });
 
@@ -212,7 +224,7 @@
                 pageNum = 1;
                 renderPage(pageNum);
             } catch (err) {
-                alert('Error loading document. Please check the link and CORS policy.');
+                alert('Error loading document. Please check the link.');
                 console.error(err);
             }
         };
